@@ -1,25 +1,19 @@
-﻿
-const n=5;
-var
-  a:array of integer;
-  i,ans,k:integer;
-function primer (var a : array of integer) : integer;
-  begin
-    var
-      i:integer;
-    for i:= 0 to n - 1 do 
-      if a[i] < 0 then
-      begin
-        ans:=i;
-      end;
-  end;
-begin
-   setlength(a, n);
-    for i:= 0 to n-1 do
-  begin
-    write('a[',i,'] = ');
-    read(a[i]);
-  end;
-  k:=primer(a);
-   writeln('Ответ: ', ans);
+﻿uses GraphABC;
+begin 
+  SetWindowSize(800, 400);
+  SetPenColor(clBlack);
+  SetPenWidth(3);
+  MoveTo(200, 100);
+  Circle(200, 100, 50);
+  FloodFill(200,100,clred);
+  Circle(600, 100, 50);
+  FloodFill(600,100,clYellow);
+  line(400, 10, 250, 100);
+  line(400, 10, 550, 100);
+  line(250, 100,550, 100);
+  FloodFill(400,30,clblue);
+  line(250, 100, 550, 100);
+  line(250, 100, 400, 200);
+  line(400, 200, 550, 100);
+  FloodFill(400, 150, cllime); 
 end.
