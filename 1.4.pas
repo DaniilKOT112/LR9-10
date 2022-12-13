@@ -1,31 +1,50 @@
-﻿uses graphABC;
+﻿
+const n=5;
+var
+  a:array[1..n] of integer;
+  b:array[1..n] of integer;
+  sum_a, sum_b, i:integer;
+procedure sum_mas_a();
+var i:integer;
 begin
-  SetWindowSize(800, 600);
-  SetPenColor(clBlack);
-  SetPenWidth(3);
-  MoveTo (200, 200);
-  line(202, 230, 300, 500);
-  line(202, 230, 222, 220);
-  line(222, 220, 400, 400);
-  line(400, 400, 390, 500);
-  line(390, 500, 300, 500);
-  FloodFill(390, 400, clblue);
-  circle(200, 200, 30);
-  FloodFill(200,200,clblue);
-  line(300, 500, 390, 500);
-  line(390, 500, 431, 160);
-  line(431, 160, 455, 160);
-  line(455, 160, 530, 500);
-  line(530, 500, 300, 500);
-  FloodFill(400,450 ,clred);
-  circle(443, 133, 30);
-  FloodFill(443,133,clred);
-  line(530, 500, 508, 400);
-  line(508, 400, 680, 222);
-  line(680, 222, 700, 222);
-  line(700, 222, 615, 500);
-  line(615, 500, 530, 500);
-  FloodFill(615, 450, cllime);
-  circle(693, 210, 30);
-   FloodFill(693,210,cllime);
+    for i:=1 to n do
+    if a[i] > 0 then
+    begin
+      sum_a:=sum_a + a[i];
+    end;
+end;
+procedure sum_mas_b();
+var i:integer;
+begin
+    for i:=1 to n do
+    if b[i] > 0 then
+    begin
+      sum_b:=sum_b + b[i];
+    end;
+end;
+begin
+  for i:=1 to n do
+  begin
+    write('a[',i,'] = ');
+    read(a[i]);
+  end;
+  for i:=1 to n do
+  begin
+    write('b[',i,'] = ');
+    read(b[i]);
+  end;
+  sum_mas_a();
+  sum_mas_b();
+  if sum_a < sum_b then
+    for i:=1 to n do
+    begin
+      a[i]:=a[i]*10;
+      write(a[i]:4);
+    end
+  else
+    for i:=1 to n do
+    begin
+      b[i]:=b[i]*10;
+      write(b[i]:4);
+    end;
 end.
